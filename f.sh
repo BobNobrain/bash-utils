@@ -21,6 +21,7 @@ fmap () {
 	fi
 
 	fn="${1}"
+	use="stdin"
 	if [ "${fn}." == . ]; then
 		fn='cat'
 	else
@@ -46,14 +47,13 @@ fmap () {
 		fi
 	fi
 
-	use="stdin"
 
 	line=""
 	while read line; do
 		if [ $use == "stdin" ]; then
-			echo "$line" | ${fn}
+			echo "${line}" | ${fn}
 		else
-			echo ${fn} "${line}"
+			echo `${fn} "${line}"`
 		fi
 	done
 }
