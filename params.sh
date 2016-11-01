@@ -8,7 +8,7 @@
 # 	is_param -b #returs true
 # 	is_param b  #returns false
 function is_param {
-	expr match $1 '^-.*$' > /dev/null
+	expr match "${1}" '^-.*$' > /dev/null
 	return $?
 }
 export -f is_param
@@ -18,7 +18,7 @@ export -f is_param
 # 	is_param --param		#returs true
 # 	is_param not_a_param	#returns false
 function is_long_param {
-	expr match $1 '^--.*$' > /dev/null
+	expr match "${1}" '^--.*$' > /dev/null
 	return $?
 }
 export -f is_long_param

@@ -3,8 +3,8 @@
 up () {
     if [ "${1}." == "--help." -o "${1}." == "-h." ]; then
         echo 'Usage: '
-        echo '    up # equal to "cd .."'
-        echo '    up <n> # equal to "cd ..", repeated <n> times'
+        echo '    up           # equal to "cd .."'
+        echo '    up <n>       # equal to "cd ..", repeated <n> times'
         echo '    up <dirname> # equal to "cd ..", repeated until current directory name is <dirname>'
         echo '                 # If no such directory found, equal to "up 1"'
     fi
