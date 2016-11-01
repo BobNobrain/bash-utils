@@ -52,6 +52,8 @@ fmap () {
 	while read line; do
 		if [ $use == "stdin" ]; then
 			echo "$line" | ${fn}
+		else
+			echo ${fn} "${line}"
 		fi
 	done
 }
