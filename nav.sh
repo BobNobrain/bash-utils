@@ -73,3 +73,14 @@ rmup () {
     cd ..
     rm -r "$path"
 }
+
+ts () {
+    touch $*
+    chmod +x $*
+}
+tse () {
+    touchsc_edit="$1"
+    shift
+    ts $*
+    $touchsc_edit $*
+}
